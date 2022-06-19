@@ -1,0 +1,39 @@
+{% extends "common.html" %}
+{% block content %}
+<h3>
+    {% if request.user.is_authenticated %}
+    Hello, {{request.user.first_name}}<br>
+    <a class="btn btn-warning" href="logout" role="button">Logout</a>
+    {% else %}
+    Hello, Stranger. Please login or register<br><br>
+    <form method="post" action="login">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" name="enter"  class="btn btn-primary" role="button" value="Enter">
+    <a class="btn btn-warning" href="registration" role="button">Registration</a>
+    </form>
+    {% endif %}
+</h3>
+
+
+<div class="row">
+    <div class="col-4" style="padding: 0px">
+        <a class="btn btn-primary btn-block" href="news" role="button">News</a>
+<!--        <button type="button" class="btn btn-primary btn-block" formaction="news">Новини</button>-->
+    </div>
+    <div class="col-4" style="padding: 0px">
+        <button type="button" class="btn btn-warning btn-block" id="test">Актуальний курс</button>
+    </div>
+    <div class="col-4" style="padding: 0px">
+        <button type="button" class="btn btn-primary btn-block">Графіки</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6" style="padding: 0px">
+        <div class="card card-body bg-light"></div>
+    </div>
+    <div class="col-6"style="padding: 0px">
+        <div class="card card-body bg-light"></div>
+    </div>
+</div>
+{% endblock %}

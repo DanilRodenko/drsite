@@ -1,0 +1,15 @@
+{% extends "common.html" %}
+{% block content %}
+<h3>
+    Registration
+</h3>
+<form method="post" action="registration">
+    <input type="text" name="login" placeholder="Enter Username" id="check_login"> <br><br>
+    <input type="text"  name="first_name" placeholder="Enter your name" id="first_name"> <br><br>
+    <input type="text" name="email" id="check_mail" placeholder="Enter e-mail"><br><br>
+    <input type="password" id="check_password" name="password" placeholder="Enter password"><br><br>
+    <input type="submit" id="sub_reg" class="btn btn-warning btn-xs" role="button" value="Submit" >
+    <button type="button" class="btn btn-primary" id="sub_reg_ajax" >Submit(Ajax)</button>
+    <a class="btn btn-primary" href="main_page" role="button">Main Menu</a>
+</form>
+{% endblock %}

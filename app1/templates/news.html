@@ -1,0 +1,22 @@
+{% extends "common.html" %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+    <div class="row">
+        <div class="col-4"> <a class="btn btn-primary" style="width:100px;height:70px" href="main_page" role="button"><center>Main Menu</center></a></div>
+    </div>
+
+
+
+
+
+{% else %}
+    <h1>Information only for users. Please, login or create new account</h1>
+     <a class="btn btn-primary btn-block" href="main_page" role="button">Main Menu</a>
+    <form method="post" action="login">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" name="enter"  class="btn btn-primary" role="button" value="Enter">
+    <a class="btn btn-warning" href="registration" role="button">Registration</a>
+    </form>
+    {% endif %}
+{% endblock %}
